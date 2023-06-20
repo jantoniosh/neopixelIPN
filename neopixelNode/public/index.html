@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Envio de Datos de Web a Arduino Uno/Raspberry Pi Pico</title>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Colores RGB</h1>
+            <div class="lienzo">
+                <h4 id="tituloRojo">R = 0</h4>
+                <input type="range" id="rojo" name="rojo" min="0" max="255" class="rangeColor" value="0">
+            </div>
+            <div class="lienzo">
+                <h4 id="tituloVerde">G = 0</h4>
+                <input type="range" id="verde" name="verde" min="0" max="255" class="rangeColor" value="0">
+            </div>
+            <div class="lienzo">
+                <h4 id="tituloAzul">R = 0</h4>
+                <input type="range" id="azul" name="azul" min="0" max="255" class="rangeColor" value="0">
+            </div>
+            <div id="rgb">
+            </div>
+        </div>
+    </div>
+    <script src="script/script.js"></script>
+</body>
+
+</html>
