@@ -8,7 +8,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-const baud = 115200;
+const baud = 9600;
 
 const port = new SerialPort({ path: '/dev/ttyACM0', baudRate: baud }, function (err) {
     if (err) {
@@ -30,16 +30,13 @@ io.on('connection', (socket) => {
 
     socket.on("colorNeopixel", (msg) => {
         let msgJson = JSON.stringify(msg);
-        // console.log(msgJson);
+        console.log(msg);
+        console.log(msgJson);
         port.write(msgJson + '\n', (err) => {
             if (err) {
                 return console.log('Error on write: ', err.message)
             }
         })
-    });
-
-    parser.on("data", (msg) => {
-        console.log(msg);
     });
 });
 

@@ -2,9 +2,9 @@ $(document).ready(function () {
     let socket = io();
 
     let c = {
-        r: 0,
-        g: 0,
-        b: 0
+        r: 127,
+        g: 127,
+        b: 127
     };
 
     socket.emit("colorNeopixel", c);
@@ -35,9 +35,4 @@ $(document).ready(function () {
         socket.emit("colorNeopixel", c);
         $("#rgb").css("background-color", `rgb(${c.r}, ${c.g}, ${c.b})`);
     }
-
-    socket.on("color", (msg) => {
-        console.log(msg);
-        setColor(msg)
-    });
 });
